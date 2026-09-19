@@ -76,14 +76,19 @@ router.get(
         });
 
       let csv =
-        "Title,Category,Amount,Status\n";
+  "Title,Category,Amount,Status,Date\n";
 
-      csv += transactions
-        .map(
-          (t) =>
-            `${t.title},${t.category},${t.amount},${t.status}`
-        )
-        .join("\n");
+csv += transactions
+  .map((t) => {
+    return [
+      `"${String(t.title).replace(/"/g, '""')}"`,
+      `"${String(t.category).replace(/"/g, '""')}"`,
+      t.amount,
+      `"${String(t.status).replace(/"/g, '""')}"`,
+      new Date(t.createdAt).toLocaleDateString()
+    ].join(",");
+  })
+  .join("\n");
 
       res.header(
         "Content-Type",
