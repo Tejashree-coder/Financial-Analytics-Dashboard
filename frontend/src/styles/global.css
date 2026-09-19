@@ -1,0 +1,56 @@
+:root {
+  --bg-primary: #1b1d24;
+  --bg-secondary: #242730;
+  --sidebar-bg: #181b22;
+
+  --text-primary: #ffffff;
+  --text-secondary: #b6bcc8;
+
+  --accent: #4f8cff;
+  --success: #22c55e;
+  --danger: #ef4444;
+
+  --radius: 12px;
+}
+.card {
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  padding: 20px;
+  border: 1px solid #333;
+}
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+.table-container {
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 14px;
+  text-align: left;
+}
+
+th {
+  background: #2d313c;
+}
+.sidebar-item.active {
+  background: #252932;
+  color: white;
+}
